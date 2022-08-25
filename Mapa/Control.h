@@ -1,4 +1,5 @@
 #pragma once
+//Jeremy
 #include "Mapa.h"
 #include "TablaVerdad.h"
 #include "Funcion.h"
@@ -14,4 +15,14 @@ class Control {
 	TablaVerdad tablaVerdad;
 	Mapa mapa;
 	Funcion funcion;
+	
+public:
+	Control();
+	~Control();
+	void EnviarTexto(String^ texto);
+	void RecibirFuncionSimplificada(String^ texto);
+	void RecibirTabla(String^ texto);
+	void RecibirAgrupaciones(String^ texto);
+	void Limpiar();
+};
 };
