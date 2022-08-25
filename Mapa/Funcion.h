@@ -1,17 +1,19 @@
 #pragma once
+//Diego
 #include <iostream>
-#include <conio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <Windows.h>
 #include <vector>
-
 
 using namespace std;
 using namespace System;
 
-//((p || q)&&(r&&q) -> r) <-> s
+//((p || q) && (r && q) -> r) <-> s
 //Dada una funcion Booleana de 2, 3 o 4 variables
+
+/*
+	Recibir texto
+	Devolver resultados 0 y 1 (enviar a tabla de verdad)
+	Devolver funcion simplificada (enviar a control)
+*/
 
 enum Operador
 {
@@ -26,6 +28,10 @@ public:
 	Operador Op;
 };
 
+class Funcion
+{
+	
+};
 /*
 vector<int>Tabla2Verdad(vector<int>Contenedor) {
 	cout << " P        Q" << endl;
