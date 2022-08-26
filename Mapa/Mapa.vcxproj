@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClInclude Include="Agrupacion.h" />
     <ClInclude Include="Control.h" />
+    <ClInclude Include="Expresion.h" />
     <ClInclude Include="Fila.h" />
     <ClInclude Include="Form1.h">
       <FileType>CppForm</FileType>

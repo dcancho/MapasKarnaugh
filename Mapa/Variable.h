@@ -1,32 +1,23 @@
+#include "Expresion.h"
+
 namespace MapasKarnaugh
 {
-    enum Valor
+	class Variable : public Expresion
     {
-        NaV = -1,
-        FALSE = 0,
-        TRUE = 1
-    };
-
-    class Variable
-    {
-    private:
-        Valor Value;
-
     public:
-        Variable()
+		Variable(Valor val) : Expresion(val)
+		{
+		}
+        bool Calcular() override
         {
-            Value = NaV;
-        }
-        bool Calcular()
-        {
-            return Value;
+            return this->value;
         }
         void AsignarValor(bool value)
         {
             if (value)
-                Value = TRUE;
+                this->value = TRUE;
             else
-                Value = FALSE;
+                this->value = FALSE;
         }
     };
 }

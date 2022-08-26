@@ -2,7 +2,7 @@
 //Jeremy
 #include "Mapa.h"
 #include "TablaVerdad.h"
-#include "Funcion.h"
+#include "Formula.h"
 
 /*
 	Envia texto de funcion (a funcion)
@@ -14,7 +14,7 @@
 class Control {
 	TablaVerdad tablaVerdad;
 	Mapa mapa;
-	Funcion funcion;
+
 	
 public:
 	Control();

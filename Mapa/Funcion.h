@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include "Variable.h"
+#include "Expresion.h"
 
 // Diego
 using namespace std;
@@ -14,31 +14,19 @@ namespace MapasKarnaugh
 		Devolver resultados 0 y 1 (enviar a tabla de verdad)
 		Devolver funcion simplificada (enviar a control)
 	*/
-	enum Operador
-	{
-		O,
-		Y,
-		NO,
-		SI,
-		SOLO_SI
-	};
 
-	template <class T>
-	class Funcion
+	class Funcion : public Expresion
 	{
 	private:
-		T expresionA;	//obligatoria
-		T expresionB;	//opcional, no se usa cuando ~A
-		Operador Op;	//&& || ~ <=> ->
-		Valor Value;	//Resultado de la evaluacion de la funcion. For defecto, NaV (Not a Value)
-
+		Expresion expresionA;	//obligatoria
+		Expresion expresionB;	//opcional, no se usa cuando ~A
+		Operador Op;	//&& || ~ <=> =>
 	public:
-		Funcion(T expresionA, T expresionB, Operador Op)
+		Funcion(Expresion expresionA, Expresion expresionB, Operador Op) : Expresion()
 		{
 			this->expresionA = expresionA;
 			this->expresionB = expresionB;
 			this->Op = Op;
-			this->Valor = NaV;
 		}
 		Funcion(string formula)
 		{

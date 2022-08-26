@@ -3,24 +3,8 @@
 
 using namespace std;
 
-enum Tokens
+namespace MapasKarnaugh
 {
-    OPEN_PARENTHESIS,           // (
-    CLOSE_PARENTHESIS,          // )
-    AND,                        // &&
-    OR,                         // ||
-    NOT,                        // ~
-    IF,                         // ->
-    ONLY_IF,                    // <->
-    TRUE,                       // T
-    FALSE,                      // F
-    VARIABLE_A,                 // A
-    VARIABLE_B,                 // B
-    VARIABLE_C,                 // C
-    VARIABLE_D,                 // D
-    EQUIVALENT                  // ===
-};
-
 static class Formula
 {
     vector<Tokens> Tokenize(string formula)
@@ -50,12 +34,12 @@ static class Formula
             {
                 tokens.push_back(NOT);
             }
-            else if (formula[i] == '-' && formula[i + 1] == '>')
+            else if (formula[i] == '=' && formula[i + 1] == '>')
             {
                 tokens.push_back(IF);
                 i++;
             }
-            else if (formula[i] == '<' && formula[i + 1] == '-' && formula[i + 2] == '>')
+            else if (formula[i] == '<' && formula[i + 1] == '=' && formula[i + 2] == '>')
             {
                 tokens.push_back(ONLY_IF);
                 i++; i++;
@@ -91,11 +75,17 @@ static class Formula
             }
             else
             {
-                cout << "Invalid token at position " << i << endl;
+                cout << "Token no reconocido en posicion " << i << endl;
             }
         }
         return tokens;
     }
 
+    Funcion AFuncion(vector<Tokens>)
+    {
+		
+    }
 
 };
+
+}
